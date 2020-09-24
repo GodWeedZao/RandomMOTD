@@ -19,8 +19,7 @@ class Main extends PluginBase
 {
     public function onEnable()
     {
-        @mkdir($this->getDataFolder());
-        $this->saveResource("Settings.yml");
+        $this->saveResource($this->getDataFolder() . "Settings.yml");
         $this->settings = new Config($this->getDataFolder() . "Settings.yml", Config::YAML);
         if ($this->settings->get("start-working") == false) {
             $this->getServer()->getPluginManager()->disablePlugin($this);
@@ -29,5 +28,10 @@ class Main extends PluginBase
         if ($this->isEnabled()) {
             $this->getScheduler()->scheduleRepeatingTask(new TheTask($this), $this->settings->get("RepeatTime") ?? 100);
         }
+    }
+    
+    public function onDisable()
+    {
+        $this->settings->save();
     }
 }
