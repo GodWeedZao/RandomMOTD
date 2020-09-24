@@ -1,0 +1,6 @@
+---
+name: RandomMOTD
+version: 1.0.0
+main: GodWeedZao\RandomMOTD\Main
+api: 3.0.0
+...
