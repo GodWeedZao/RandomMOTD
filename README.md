@@ -8,6 +8,7 @@
 <li>Edit the Settings.yml file of plugin in <code>plugin_data/RandomMOTD</code></li>
   <li>you can disable or enable plugin by set <code>start-working: </code> to false or true</li>
   <li>You can set colorful messages in Settings.yml</li>
+  <li>You can change RepeatTime of MOTD in Settings.yml</li>
 </li>
 </ol>
 <p>Hope you enjoy using plugin.<p>
