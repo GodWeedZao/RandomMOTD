@@ -21,7 +21,7 @@ class Main extends PluginBase
     {
         @mkdir($this->getDataFolder());
         $this->saveResource("Settings.yml");
-        $this->settings = new Config("Settings.yml", Config::YAML);
+        $this->settings = new Config($this->getDataFolder() . "Settings.yml", Config::YAML);
         if ($this->settings->get("start-working") == false) {
             $this->getServer()->getPluginManager()->disablePlugin($this);
             $this->getLogger()->notice("Plugin Disabled");
