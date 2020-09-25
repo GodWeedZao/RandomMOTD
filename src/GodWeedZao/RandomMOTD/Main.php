@@ -30,9 +30,4 @@ class Main extends PluginBase
             $this->getScheduler()->scheduleRepeatingTask(new TheTask($this), $this->settings->get("RepeatTime") ?? 100);
         }
     }
-    
-    public function onDisable()
-    {
-        $this->settings->save();
-    }
 }
